@@ -1,0 +1,11 @@
+.home-container {
+    width:70%;
+    margin: 0 15%;
+    border: 1px solid fuchsia;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

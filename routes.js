@@ -10,6 +10,5 @@ angular.module('App').config(function($stateProvider, $urlRouterProvider){
         controller: 'triviaCtrl'
     })
 
-
-    $urlRouterProvider.otherwise('/')
+    // $urlRouterProvider.otherwise('/')
 })
