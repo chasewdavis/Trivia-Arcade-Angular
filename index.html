@@ -10,18 +10,15 @@
 
 <body ng-app="App" ng-controller="myCtrl">
     
-    <div class="contain-questions">
-        <div class="question" ng-repeat="x in trivia">
-            <h5>{{x.question}}</h5>
-            <div class="answer-container">
-            <button class="answer" ng-repeat="y in x.incorrect_answers">{{y}}</button>
-            </div>
-        </div>
-    </div>
+    <ui-view></ui-view>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js" charset="utf-8"></script>
     <script src="./app.js"></script>
-
+    <script src="./ctrl.js"></script>
+    <script src="./routes.js"></script>
+    <script src="./views/select/select.js"></script>
+    <script src="./views/trivia/trivia.js"></script>
 </body>
 
 </html>

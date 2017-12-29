@@ -1,0 +1,10 @@
+<div>
+    <div class="contain-questions">
+        <div class="question" ng-repeat="x in trivia">
+            <h5>{{x.question}}</h5>
+            <div class="answer-container">
+            <button class="answer" ng-repeat="y in x.incorrect_answers">{{y}}</button>
+            </div>
+        </div>
+    </div>
+</div>
