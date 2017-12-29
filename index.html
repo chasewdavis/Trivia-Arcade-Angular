@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css">
+    <title>Angular</title>
+</head>
+
+<body ng-app="App" ng-controller="myCtrl">
+    
+    <div class="contain-questions">
+        <div class="question" ng-repeat="x in trivia">
+            <h5>{{x.question}}</h5>
+            <div class="answer-container">
+            <button class="answer" ng-repeat="y in x.incorrect_answers">{{y}}</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" charset="utf-8"></script>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
