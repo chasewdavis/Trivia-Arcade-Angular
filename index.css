@@ -6,7 +6,8 @@
 }
 
 body{
-    background: linear-gradient(0deg, rgb(219, 219, 219), rgb(255, 255, 255));
+    background: #1D1D1F;
+    color: whitesmoke;
     min-height: 100vh;
 }
 

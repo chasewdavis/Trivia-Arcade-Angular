@@ -8,25 +8,21 @@
     </div>
     <div class="select-game">
         <div class="scroll-box category">
-            <button>Sports</button>
-            <button>Geography</button>
-            <button>Computer Science</button>
-            <button>Television</button>
-            <button>General Knowledge</button>
-            <button>Movies</button>
-            <button>History</button>
+            <button 
+                ng-repeat="item in categories" 
+                ng-class="item.sel ? 'highlight' : 'no-highlight' "
+                ng-click="selectCat($index)">
+                {{item.cat}}
+            </button>
         </div>
         <div class="scroll-box difficulty">
-            <button>easy</button>
-            <button>medium</button>
-            <button>hard</button>
-            <button>any</button>
+            <button ng-click="selectDiff('easy')" ng-class="difficulty === 'easy' ? 'highlight' : 'no-highlight' ">Easy</button>
+            <button ng-click="selectDiff('medium')" ng-class="difficulty === 'medium' ? 'highlight' : 'no-highlight' ">Medium</button>
+            <button ng-click="selectDiff('hard')" ng-class="difficulty === 'hard' ? 'highlight' : 'no-highlight' ">Hard</button>
+            <button ng-click="selectDiff('any')" ng-class="difficulty === 'any' ? 'highlight' : 'no-highlight' ">Any</button>
         </div>
         <div class="scroll-box high-scores">
-            <div>1.</div>
-            <div>2.</div>
-            <div>3.</div>
-            <div>4.</div>
+            <div ng-repeat="x in highscores">{{$index + 1}}. {{x}}</div>
         </div>
     </div>
     <footer><button>PLAY</button></footer>
