@@ -1,0 +1,39 @@
+
+
+.trivia > header {
+    font-size: 35px;
+}
+
+.trivia .question {
+    /* border: 1px solid fuchsia; */
+    padding: 30px;
+    font-size: 22px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.trivia .answer-container {
+    /* border:1px solid fuchsia; */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.trivia .answer-container button {
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    width: calc(50% - 15px);
+    background: #303238;
+    border: 2px solid rgb(113, 133, 123);
+    font-size: 18px;
+    padding: 10px 0;
+    border-radius: 50px;
+}
+
+.trivia footer {
+    border-top: 2px solid rgb(113, 133, 123);
+    font-size: 35px;
+    font-family: 'Share Tech Mono';
+    padding: 20px 0;
+    /* background: #1D1D1F; */
+}

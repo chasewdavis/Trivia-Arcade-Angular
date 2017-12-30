@@ -25,7 +25,7 @@
             <div ng-repeat="x in highscores">{{$index + 1}}. {{x}}</div>
         </div>
     </div>
-    <footer><button>PLAY</button></footer>
+    <footer><a ng-click="callSrvc(category,difficulty)" ui-sref="trivia"><button>PLAY</button></a></footer>
     <div>
 </div>
 

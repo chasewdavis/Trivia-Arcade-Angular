@@ -1,10 +1,19 @@
-<div ng-controller="myCtrl">
-    <div class="contain-questions">
-        <div class="question" ng-repeat="x in trivia">
-            <h5>{{x.question}}</h5>
+<div ng-controller="triviaCtrl" class="home-container">
+    <div class="contain-center trivia">
+
+        <header>scores and stuff</header>
+
+        <div class="question">
+            <h5>{{trivia[index].question}}</h5>
             <div class="answer-container">
-            <button class="answer" ng-repeat="y in x.incorrect_answers">{{y}}</button>
+            <button class="answer" ng-repeat="x in trivia[index].incorrect_answers">{{x}}</button>
             </div>
         </div>
+
+        <footer>
+            <!-- Time is running out! -->
+            15 seconds remaining!
+        </footer>
+
     </div>
 </div>
