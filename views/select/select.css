@@ -1,11 +1,123 @@
-.home-container {
-    width:70%;
-    margin: 0 15%;
-    border: 1px solid fuchsia;
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323');
+
+button {
+    border:none;
 }
 
-header{
+.home-container {
+    width:60%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin: 0 20%;
+    font-family: 'Share Tech Mono';
+}
+
+.home-container button {
+    outline: none;
+    cursor: pointer;
+}
+
+.contain-center{
+    border: 4px solid rgba(112, 112, 112, 0.377);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.contain-center > header{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Share Tech Mono';
+    font-size: 60px;
+    width: 100%;
+    border-bottom: 2px solid rgba(112, 112, 112, 0.377);
+}
+
+.titles {
+    display: flex;  
+}
+
+.titles header {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    font-family: 'Share Tech Mono';
+    font-size: 30px;
+    border-bottom: 2px solid rgba(112, 112, 112, 0.377);
+}
+
+.select-game {
+    display: grid;
+    height: 300px;
+    width: 100%;
+    grid-template-columns: repeat(3, 3FR);
+    grid-template-rows: repeat(1, 1FR);
+}
+
+.select-game button {
+    width: 100%;
+    font-family: 'Share Tech Mono';
+    font-size: 25px;
+    background: rgba(0,0,0,0);
+    border-bottom: 2px solid rgba(112, 112, 112, 0.377);
+}
+
+.scroll-box {
+    overflow-y: scroll;
+}
+
+.category button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% / 4);
+    width: 100%;
+}
+
+.difficulty {
+    border-left: 2px solid rgba(112, 112, 112, 0.377);
+}
+
+.difficulty button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% / 4);
+}
+
+.high-scores {
+    height: 100%;
+    border-left: 2px solid rgba(112, 112, 112, 0.377);
+}
+
+.high-scores div {
+    height: calc(100% / 4);
+    border-bottom: 2px solid rgba(112, 112, 112, 0.377);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+.home-container footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: VT323;
+}
+
+.home-container footer button {
+    font-size: 50px;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Share Tech Mono';
+    background: rgba(0,0,0,0);
 }

@@ -1,10 +1,5 @@
 angular.module('App').controller('myCtrl', function($scope, $http) {
     
-    $scope.random = function(wrongAs, rightA){
-        console.log(wrongAs, rightA)
-
-    };
-
     $http.get("https://opentdb.com/api.php?amount=10&difficulty=easy")
     .then(function(response) {
         $scope.trivia = response.data.results

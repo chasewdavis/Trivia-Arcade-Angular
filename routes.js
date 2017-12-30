@@ -8,7 +8,11 @@ angular.module('App').config(function($stateProvider, $urlRouterProvider){
         url: '/trivia',
         templateUrl: './views/trivia/trivia.html',
         controller: 'triviaCtrl'
+    }).state('demo', {
+        url: '/demo',
+        templateUrl: './views/demo/demo.html',
+        controller: 'demoCtrl'
     })
 
-    // $urlRouterProvider.otherwise('/')
+    $urlRouterProvider.otherwise('/')
 })
