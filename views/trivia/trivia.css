@@ -85,9 +85,58 @@
     animation-timing-function: linear;
 }
 
+.pause_timer{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused; 
+    animation-play-state:paused;
+}
+
+.correct {
+    animation: correct .65s;
+    background-color: rgba(0,0,0,0);
+    /* animation-timing-function: ; */
+    animation-iteration-count: 2;
+}
+
+.incorrect {
+    animation: incorrect .65s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
 @keyframes shrink {
     100% {
         clip-path: inset(0 100% 0 0);
+    }
+}
+
+@keyframes correct {
+    50%{
+        background-color: rgb(113, 133, 123);
+        color: #303238;
+    }
+    100%{
+        background-color: rgba(0,0,0,0);
+        color: rgb(175, 240, 210);
+    }
+}
+
+@keyframes incorrect {
+    12.5%{
+        transform: translateX(-7px);
+    }
+    37.5%{
+        transform: translateX(7px);
+    }
+    62.5%{
+        transform: translateX(-7px);
+    }
+    87.5%{
+        transform: translateX(7px);
+    }
+    100%{
+        transform: translate(0px);
     }
 }
 
