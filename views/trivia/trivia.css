@@ -11,7 +11,6 @@
 }
 
 .trivia .answer-container {
-    /* border:1px solid fuchsia; */
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -19,14 +18,26 @@
 }
 
 .trivia .answer-container button {
-    /* border: 1px solid red; */
+    position: relative;
+    overflow: hidden;
     margin-top: 30px;
     width: calc(50% - 15px);
-    background: #303238;
-    border: 2px solid rgb(113, 133, 123);
+    background-color: #303238;
     font-size: 18px;
     padding: 10px 0;
     border-radius: 50px;
+
+    border: 4px solid rgb(175, 240, 210);
+    border-right: 4px solid rgb(113, 133, 123);
+    border-top: 4px solid rgb(113, 133, 123);
+    transition: border .42s, background-color .42s;
+}
+
+.trivia .answer-container button:hover {
+    border: 4px solid rgb(113, 133, 123);
+    border-right: 4px solid rgb(175, 240, 210);
+    border-top: 4px solid rgb(175, 240, 210);
+    background-color: rgba(29, 29, 31, 0.4);
 }
 
 .trivia footer {
@@ -50,24 +61,9 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* clip-path: inset(0 0 0 0);
-    animation: shrink 10s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear; */
 }
 
 .start_timer {
-    /* position: absolute;
-    left: 0;
-    top: 0;
-    color: #303238;
-    background:rgb(113, 133, 123);
-    height: 100%;
-    width: 100%;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; */
     clip-path: inset(0 0 0 0);
     animation: shrink 10s;
     animation-fill-mode: forwards;

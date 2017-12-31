@@ -1,12 +1,10 @@
-angular.module('App').controller('triviaCtrl', function($scope, srvc){
-
-    console.log('trviaCtrl fired')
+angular.module('App').controller('triviaCtrl', function($scope, $timeout, srvc){
 
     $scope.trivia = [];
 
     $scope.startTimer = false;
 
-    $scope.time_remaining = 11;
+    $scope.time_remaining = 10;
 
     srvc.getQuestions()
     .then(function(res) {
@@ -27,19 +25,16 @@ angular.module('App').controller('triviaCtrl', function($scope, srvc){
         
         $scope.startTimer = true;
 
-        $scope.beginCountDown()
+        $timeout(subtract, 1000);
 
-        console.log('scope.trivia is', $scope.trivia)
     });
 
-    $scope.setTimeRemainig = () => {
-        $scope.time_remaining = $scope.time_remaining - 1;
-        console.log($scope.time_remaining)
-    }
+    // beautifuly simple timer using recursion
 
-    $scope.beginCountDown = function(){
-        for(var i = 0; i < $scope.time_remaining; i++ ){
-            setTimeout( () => $scope.setTimeRemainig() , i * 1000)
+    var subtract = function(){
+        if($scope.time_remaining > 0 ){
+            $scope.time_remaining--;
+            $timeout(subtract, 1000)
         }
     }
 

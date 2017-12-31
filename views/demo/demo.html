@@ -4,16 +4,11 @@
 
 <div>
 
-    <div class="demo-contain" infinite-scroll="next()" infinite-scroll-distance='2'></div>
+    {{value}}
 
-        <h1 ng-repeat="x in array track by $index">
-            {{x}}
-            <br>
-            <br>
-            <br>
-            <br>
-            <hr>
-        </h1>
-    </div>
+    <br>
+    <br>
+    
+    <button ng-click="countDown()">Start CountDown</button>
 
 </div>

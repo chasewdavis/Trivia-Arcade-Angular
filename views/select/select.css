@@ -27,9 +27,9 @@ button {
 }
 
 .contain-center{
-    border: 5px solid rgb(175, 240, 210);
-    border-left: 5px solid rgb(113, 133, 123);
-    border-bottom: 5px solid rgb(113, 133, 123);
+    border: 5px solid rgb(113, 133, 123);
+    border-left: 5px solid rgb(175, 240, 210);
+    border-bottom: 5px solid rgb(175, 240, 210);
     border-radius: 13px;
     overflow: hidden;
     width: 100%;
@@ -40,9 +40,9 @@ button {
 }
 
 .contain-center:hover{
-    border: 5px solid rgb(113, 133, 123);
-    border-left: 5px solid rgb(175, 240, 210);
-    border-bottom: 5px solid rgb(175, 240, 210);
+    border: 5px solid rgb(175, 240, 210);
+    border-left: 5px solid rgb(113, 133, 123);
+    border-bottom: 5px solid rgb(113, 133, 123);
 }
 
 .contain-center > header{

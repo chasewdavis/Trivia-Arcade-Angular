@@ -1,11 +1,18 @@
-angular.module('App').controller('demoCtrl', function($scope){
-    $scope.input = '';
+angular.module('App').controller('demoCtrl', function($scope, $timeout){
+    
+    $scope.value = 10;
 
-    $scope.array = [1,2,3,4,5,6,7,8,9,10,11,12];
+    $scope.countDown = function(){
 
-    $scope.next = function(){
-        console.log('next func running')
-        var nextVal = $scope.array[$scope.array.length - 1] + 1;
-        $scope.array.push(nextVal);
+        var subtract = function(){
+            if( $scope.value > 0 ){
+                $scope.value--;
+                $timeout( subtract, 1000 )
+            }
+        }
+
+        $timeout( subtract, 1000 )
+
     }
+
 })
