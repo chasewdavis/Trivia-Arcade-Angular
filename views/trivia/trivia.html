@@ -1,12 +1,16 @@
 <div class="home-container">
     <div class="contain-center trivia">
 
-        <header>scores and stuff</header>
+        <header>
+            <span>{{index + 1}} / 10</span>
+            <span>{{trivia[index].category}}</span>
+            <span>{{score}}</span>
+        </header>
 
         <div class="question">
             <h5>{{trivia[index].question}}</h5>
             <div class="answer-container">
-            <button class="answer" ng-repeat="x in trivia[index].incorrect_answers">{{x}}</button>
+            <button class="answer" ng-click="checkAnswer($index)" ng-repeat="x in trivia[index].incorrect_answers">{{x}}</button>
             </div>
         </div>
 

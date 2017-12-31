@@ -20,7 +20,7 @@ angular.module('App').service('srvc', function($http){
             return $http.get(`https://opentdb.com/api.php?amount=10&difficulty=${difficulty}`)
             .then( res => res.data.results )
             .catch( err => console.log('Error getting questions', err) )
-        }else if ( !difficulty ){
+        }else if ( !difficulty || difficulty==='any' ){
             return $http.get(`https://opentdb.com/api.php?amount=10&category=${category}`)
             .then( res => res.data.results )
             .catch( err => console.log('Error getting questions', err) )

@@ -1,7 +1,22 @@
 
 
 .trivia > header {
-    font-size: 35px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.trivia > header span:nth-child(1){
+    position: absolute;
+    left: 0;
+    padding-left: 30px;
+}
+
+.trivia > header span:nth-child(3){
+    position: absolute;
+    right: 0;
+    padding-right: 30px;
 }
 
 .trivia .question {
