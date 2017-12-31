@@ -5,7 +5,6 @@
 }
 
 .trivia .question {
-    /* border: 1px solid fuchsia; */
     padding: 30px;
     font-size: 22px;
     font-family: Helvetica, Arial, sans-serif;
@@ -31,9 +30,57 @@
 }
 
 .trivia footer {
-    border-top: 2px solid rgb(113, 133, 123);
+    border-top: 2px solid rgb(175, 240, 210);
+    position: relative;
     font-size: 35px;
     font-family: 'Share Tech Mono';
+    color: rgb(175, 240, 210);
     padding: 20px 0;
-    /* background: #1D1D1F; */
 }
+
+.trivia footer div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #303238;
+    background:rgb(113, 133, 123);
+    height: 100%;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* clip-path: inset(0 0 0 0);
+    animation: shrink 10s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear; */
+}
+
+.start_timer {
+    /* position: absolute;
+    left: 0;
+    top: 0;
+    color: #303238;
+    background:rgb(113, 133, 123);
+    height: 100%;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; */
+    clip-path: inset(0 0 0 0);
+    animation: shrink 10s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes shrink {
+    100% {
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+
+
+
+

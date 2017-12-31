@@ -1,6 +1,12 @@
 angular.module('App').controller('triviaCtrl', function($scope, srvc){
 
+    console.log('trviaCtrl fired')
+
     $scope.trivia = [];
+
+    $scope.startTimer = false;
+
+    $scope.time_remaining = 11;
 
     srvc.getQuestions()
     .then(function(res) {
@@ -19,8 +25,23 @@ angular.module('App').controller('triviaCtrl', function($scope, srvc){
             })
         })
         
+        $scope.startTimer = true;
+
+        $scope.beginCountDown()
+
         console.log('scope.trivia is', $scope.trivia)
     });
+
+    $scope.setTimeRemainig = () => {
+        $scope.time_remaining = $scope.time_remaining - 1;
+        console.log($scope.time_remaining)
+    }
+
+    $scope.beginCountDown = function(){
+        for(var i = 0; i < $scope.time_remaining; i++ ){
+            setTimeout( () => $scope.setTimeRemainig() , i * 1000)
+        }
+    }
 
     $scope.index = 0;
 

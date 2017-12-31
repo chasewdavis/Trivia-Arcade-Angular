@@ -1,4 +1,4 @@
-<div ng-controller="triviaCtrl" class="home-container">
+<div class="home-container">
     <div class="contain-center trivia">
 
         <header>scores and stuff</header>
@@ -11,8 +11,15 @@
         </div>
 
         <footer>
-            <!-- Time is running out! -->
-            15 seconds remaining!
+            
+            {{ time_remaining }} seconds remaining!
+
+            <div ng-class="startTimer ? 'start_timer' : 'nope' ">
+
+                <span>{{ time_remaining }} seconds remaining!</span>
+
+            </div>
+
         </footer>
 
     </div>
