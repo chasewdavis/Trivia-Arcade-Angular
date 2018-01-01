@@ -16,8 +16,8 @@
 
         <footer>  
             {{ time_remaining > 10 ? 10 : time_remaining }} seconds remaining!
-            <div ng-class=" paused ? 'start_timer pause_timer' : 'start_timer' ">
-                <span>{{ time_remaining > 10 ? 10 : time_remaining }} seconds remaining!</span>
+            <div id="timer_animation" class="start_timer" ng-class=" paused ? 'pause_timer' : resetTimerClass() ">
+                <span>{{ time_remaining > 10 ? 10 : time_remaining ? time_remaining : outOfTime() }} seconds remaining!</span>
             </div>
         </footer>
 

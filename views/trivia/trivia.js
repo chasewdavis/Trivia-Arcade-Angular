@@ -55,6 +55,36 @@ angular.module('App').controller('triviaCtrl', function($scope, $timeout, srvc){
         $scope.paused = true;
 
         // now on to the next question and reseting timers
+        $timeout( function(){
+            if($scope.index !== 9){
+                $scope.index++;
+                $scope.paused = false;
+                $scope.time_remaining = 11;
+                $scope.correct = false;
+                $scope.incorrect = false;
+                subtract();
+            }else{
+                // push to new route
+
+            }
+        }, 1300)
+    }
+
+    $scope.outOfTime = function(){
+        console.log('out of time');
+    }
+
+    $scope.resetTimerClass = function(){
+
+        // kinda a hacky way to do this, looking for alternatives
+
+        var elem = document.getElementById('timer_animation');
+
+        if($scope.time_remaining===10){
+            elem.classList.remove("start_timer");
+            void elem.offsetWidth;
+            elem.classList.add("start_timer");
+        }
 
     }
 

@@ -85,11 +85,18 @@
     animation-timing-function: linear;
 }
 
-.pause_timer{
+.pause_timer {
     -webkit-animation-play-state:paused;
     -moz-animation-play-state:paused;
     -o-animation-play-state:paused; 
     animation-play-state:paused;
+}
+
+.reset_timer {
+    -webkit-animation-play-state:initial;
+    -moz-animation-play-state:initial;
+    -o-animation-play-state:initial; 
+    animation-play-state:initial;
 }
 
 .correct {
