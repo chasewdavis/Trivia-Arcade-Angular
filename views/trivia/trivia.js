@@ -1,4 +1,4 @@
-angular.module('App').controller('triviaCtrl', function($scope, $timeout, srvc){
+angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout, srvc){
 
     $scope.index = 0;
     $scope.trivia = [];
@@ -34,6 +34,11 @@ angular.module('App').controller('triviaCtrl', function($scope, $timeout, srvc){
     });
 
     var subtract = function(){
+
+        if($scope.time_remaining === 1){
+            $scope.checkAnswer(10);
+        }
+
         if( $scope.time_remaining > 0 ){
             $scope.time_remaining--;
             timer = $timeout( subtract, 1000 );
@@ -66,12 +71,11 @@ angular.module('App').controller('triviaCtrl', function($scope, $timeout, srvc){
             }else{
                 // push to new route
 
+                srvc.setScore($scope.score);
+
+                $state.go('results');
             }
         }, 1300)
-    }
-
-    $scope.outOfTime = function(){
-        console.log('out of time');
     }
 
     $scope.resetTimerClass = function(){

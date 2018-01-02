@@ -8,6 +8,10 @@ angular.module('App').config(function($stateProvider, $urlRouterProvider){
         url: '/trivia',
         templateUrl: './views/trivia/trivia.html',
         controller: 'triviaCtrl'
+    }).state('results', {
+        url: '/results',
+        templateUrl: './views/results/results.html',
+        controller: 'results'
     }).state('demo', {
         url: '/demo',
         templateUrl: './views/demo/demo.html',

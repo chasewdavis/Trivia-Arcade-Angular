@@ -2,12 +2,15 @@ angular.module('App').service('srvc', function($http){
 
     var category = null;
     var difficulty = null;
+    var score = 0;
 
     this.setQuestions = function(cat, diff){
-  
         category = cat;
         difficulty = diff;
+    }
 
+    this.setScore = function(pts){
+        score = pts;
     }
 
     this.getQuestions = function(){
@@ -29,6 +32,13 @@ angular.module('App').service('srvc', function($http){
         return $http.get(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}`)
         .then( res => res.data.results)
         .catch(err => console.log('Error getting questions:', err))
+    }
+
+    this.getResults = function(){
+        return { 
+            category: category, 
+            score: score 
+        }
     }
     
 })
