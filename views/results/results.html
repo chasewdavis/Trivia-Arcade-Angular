@@ -1,7 +1,25 @@
-<div ng-controller="results">
-    {{results.category ? results.category : 'All Categories' }}
-    <br>
-    {{results.score}}
-    <br>
-    <a ui-sref="home">home</a>
+<div ng-controller="results" class="home-container results">
+
+    <div class="contain-center contain-results">
+
+        <header>{{results.category ? results.category : 'All Categories' }}</header>
+
+        <div class="scoring">
+            <div>Score: {{results.score}}</div>
+            <div>Enter Name: <input/></div>
+            <div class="outoften">
+                <div>08</div>
+                <div id="divide"></div>
+                <div>10</div>
+            </div>
+        </div>
+
+        <footer>
+            <a ng-click="save()" ui-sref="questions">See All Questions</a>
+            <a ui-sref="home">Don't Save</a>
+            <a ui-sref="home">Save</a>
+        </footer>
+
+    </div>
+
 </div>

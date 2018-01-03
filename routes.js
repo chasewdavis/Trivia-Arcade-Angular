@@ -12,6 +12,10 @@ angular.module('App').config(function($stateProvider, $urlRouterProvider){
         url: '/results',
         templateUrl: './views/results/results.html',
         controller: 'results'
+    }).state('questions', {
+        url: '/questions',
+        templateUrl: './views/questions/questions.html',
+        // controller: 'questions'
     }).state('demo', {
         url: '/demo',
         templateUrl: './views/demo/demo.html',
