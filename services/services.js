@@ -3,14 +3,16 @@ angular.module('App').service('srvc', function($http){
     var category = null;
     var difficulty = null;
     var score = 0;
+    var count = 0;
 
     this.setQuestions = function(cat, diff){
         category = cat;
         difficulty = diff;
     }
 
-    this.setScore = function(pts){
+    this.setScore = function(pts, cc){
         score = pts;
+        count = cc;
     }
 
     this.getQuestions = function(){
@@ -35,9 +37,11 @@ angular.module('App').service('srvc', function($http){
     }
 
     this.getResults = function(){
+        console.log('from results count is...', count)
         return { 
             category: category, 
-            score: score 
+            score: score,
+            count: count 
         }
     }
     

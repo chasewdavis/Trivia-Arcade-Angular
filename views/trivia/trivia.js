@@ -6,6 +6,7 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
     $scope.score = 0;
     $scope.paused = true;
     $scope.correct;
+    $scope.countCorrect = 0;
     $scope.incorrect_answers;
     var timer;
 
@@ -47,9 +48,8 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
 
     $scope.checkAnswer = function(i){
 
-        console.log('btn working')
-
         if($scope.trivia[$scope.index].correct_answer === $scope.trivia[$scope.index].incorrect_answers[i]){
+            $scope.countCorrect++;
             $scope.score += 100;
             $scope.correct = true;
         }else{
@@ -71,7 +71,7 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
             }else{
                 // push to new route
 
-                srvc.setScore($scope.score);
+                srvc.setScore($scope.score, $scope.countCorrect);
 
                 $state.go('results');
             }

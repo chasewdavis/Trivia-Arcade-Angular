@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
 
 button {
     border:none;
@@ -135,7 +135,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: VT323;
 }
 
 .home-container footer button {

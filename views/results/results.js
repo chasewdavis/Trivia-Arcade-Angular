@@ -2,7 +2,8 @@ angular.module('App').controller('results', ['$scope','srvc', 'catSrvc', functio
 
     $scope.results = {
         category: null,
-        score: null
+        score: null,
+        count: null
     }
     $scope.results = srvc.getResults();
 

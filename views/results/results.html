@@ -6,18 +6,20 @@
 
         <div class="scoring">
             <div>Score: {{results.score}}</div>
-            <div>Enter Name: <input/></div>
+            <div class="enter-name">
+                <p>Enter Name:</p> 
+                <input/>
+            </div>
             <div class="outoften">
-                <div>08</div>
+                <div>{{ results.count === 10 ? 10 : '0' + results.count.toString() }}</div>
                 <div id="divide"></div>
                 <div>10</div>
             </div>
         </div>
 
         <footer>
-            <a ng-click="save()" ui-sref="questions">See All Questions</a>
-            <a ui-sref="home">Don't Save</a>
-            <a ui-sref="home">Save</a>
+            <a ng-click="save()" ui-sref="questions">View Questions</a>
+            <a ui-sref="home">Save &amp; Continue</a>
         </footer>
 
     </div>
