@@ -4,7 +4,7 @@
         <div class="q-header">
             <div>{{qs[currentIndex].category}} - {{qs[currentIndex].difficulty}}</div>
             <div></div>
-            <div>+100 pts</div>
+            <div>+{{qs[currentIndex].points}} pts</div>
         </div>
 
         <!-- <div class="q-header">
@@ -17,7 +17,15 @@
         <div class="question">
             <h5>{{qs[currentIndex].question}}</h5>
             <div class="answer-container">
-            <button id="no-click-btn" ng-class="qs[currentIndex].correctIndex === $index ? 'correct-highlight' : qs[currentIndex].userIndex === $index ? 'incorrect-highlight' : 'nothin' " disabled="true" ng-repeat="x in qs[currentIndex].incorrect_answers">{{x}}</button>
+                <button 
+                    id="no-click-btn" 
+                    ng-class="qs[currentIndex].correctIndex === $index ? 'correct-highlight' : qs[currentIndex].userIndex === $index ? 'incorrect-highlight' : 'nothin' " 
+                    disabled="true" ng-repeat="x in qs[currentIndex].incorrect_answers">
+                        {{x}}
+                        <span ng-show="qs[currentIndex].userIndex === 10">
+                            <i ng-show="qs[currentIndex].correctIndex === $index" class="fa fa-clock-o" aria-hidden="true"></i>
+                        </span>
+                </button>
             </div>
         </div>
 

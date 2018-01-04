@@ -53,10 +53,24 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
 
         if($scope.trivia[$scope.index].correct_answer === $scope.trivia[$scope.index].incorrect_answers[i]){
             $scope.countCorrect++;
+            $scope.trivia[$scope.index].points = 100;
             $scope.score += 100;
+
+            if($scope.trivia[$scope.index].difficulty === 'medium'){
+                $scope.trivia[$scope.index].points += 50;
+                $scope.score += 50
+            }else if($scope.trivia[$scope.index].difficulty === 'hard'){
+                $scope.trivia[$scope.index].points += 100;
+                $scope.score += 100
+            }
+
+            let timeBonus = $scope.time_remaining * 5
+            $scope.trivia[$scope.index].points += timeBonus;
+
             $scope.correct = true;
         }else{
-            $scope.score -= 50;
+            $scope.trivia[$scope.index].points = 0;
+            // $scope.score -= 50;
             $scope.incorrect = true;
         }
         $scope.trivia[$scope.index].userIndex = i;
