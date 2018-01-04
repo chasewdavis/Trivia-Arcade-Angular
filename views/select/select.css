@@ -74,11 +74,31 @@ button {
 }
 
 .select-game {
+    position: relative;
     display: grid;
     height: 300px;
     width: 100%;
     grid-template-columns: repeat(3, 3FR);
     grid-template-rows: repeat(1, 1FR);
+}
+
+.home-container .select-game .shaddow {
+    position: absolute;
+    width: calc( 100% / 3 + 2px);
+    height: 20px;
+    
+    left: -1px;
+    background: linear-gradient(0deg, rgba(113, 133, 123,.5), rgba(0,0,0,0))
+}
+
+.home-container .select-game .shaddow-top {
+    top: 0;
+    background: linear-gradient(180deg, rgba(113, 133, 123,.5), rgba(0,0,0,0))
+}
+
+.home-container .select-game .shaddow-bottom {
+    bottom:0;
+    background: linear-gradient(0deg, rgba(113, 133, 123,.5), rgba(0,0,0,0))
 }
 
 .select-game button {
