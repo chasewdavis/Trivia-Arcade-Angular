@@ -14,11 +14,14 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
     .then(function(res) {
         $scope.trivia = res;
         $scope.trivia.forEach( e => {
-            e.incorrect_answers.push(e.correct_answer)
+            let correctIndex = Math.floor( Math.random() * ( e.incorrect_answers.length + 1 ) );
+            e.correctIndex = correctIndex;
+            e.incorrect_answers.splice(correctIndex, 0, e.correct_answer);
         });
         $scope.trivia.forEach( e => {
             e.question = e.question.replace(/&#039;/g, "\'");
             e.question = e.question.replace(/&quot;/g, '\"');
+            // should find a much better way to do this
             e.incorrect_answers = e.incorrect_answers.map( s => {
                 return s.replace(/&#039;/g, '\'' )
             })
@@ -56,9 +59,9 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
             $scope.score -= 50;
             $scope.incorrect = true;
         }
+        $scope.trivia[$scope.index].userIndex = i;
         $timeout.cancel(timer);
         $scope.paused = true;
-
         // now on to the next question and reseting timers
         $timeout( function(){
             if($scope.index !== 9){
@@ -69,10 +72,8 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
                 $scope.incorrect = false;
                 subtract();
             }else{
-                // push to new route
-
-                srvc.setScore($scope.score, $scope.countCorrect);
-
+                // let rest of the app know how ya did // push to new route //
+                srvc.setScore($scope.score, $scope.countCorrect, $scope.trivia);
                 $state.go('results');
             }
         }, 1300)

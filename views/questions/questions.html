@@ -1,1 +1,32 @@
-show questions
+<div class="home-container">
+    <div class="contain-center questions">
+        <header>
+
+        </header>
+
+        {{ qs[currentIndex] }}
+
+        <div class="q-footer">
+
+            <button ng-click="changeIndex('down')" class="nav-btn nav-btn-left">
+                <div class="gradient"></div>
+                <div class="icon">
+                    <i class="fa fa-angle-left fa-3x" aria-hidden="true"></i>
+                </div>
+            </button>
+
+            <button ng-click="changeIndex($index)" ng-repeat="x in qs">
+                <i class="round-nav-btn fa fa-3x" 
+                   ng-class=" $index === currentIndex ? x.correctIndex === x.userIndex ? 'fa-check-circle' : 'fa-times-circle' : 'fa-circle-o' "  
+                   aria-hidden="true">
+                </i>
+            </button>
+
+            <button ng-click="changeIndex('up')" class="nav-btn nav-btn-right">
+                <i class="fa fa-angle-right fa-3x" aria-hidden="true"></i>
+                <div></div>
+            </button>
+
+        </div>
+    </div>
+</div>

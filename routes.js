@@ -15,7 +15,7 @@ angular.module('App').config(function($stateProvider, $urlRouterProvider){
     }).state('questions', {
         url: '/questions',
         templateUrl: './views/questions/questions.html',
-        // controller: 'questions'
+        controller: 'finishedQuestions'
     }).state('demo', {
         url: '/demo',
         templateUrl: './views/demo/demo.html',

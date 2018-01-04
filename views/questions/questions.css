@@ -1,0 +1,48 @@
+.questions .q-footer{
+    /* border: 1px solid fuchsia; */
+    border-top: 2px solid rgb(113, 133, 123);
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* all footer btns */
+.q-footer button {
+    padding: 0;
+    width: initial;
+    background-color: transparent;
+}
+
+.q-footer .round-nav-btn:hover {
+    color: rgb(113, 133, 123);
+}
+
+.q-footer .nav-btn {
+    font-size: 30px;
+    width: 25%;
+    padding: 0;
+}
+
+.q-footer .nav-btn i {
+    transform: translateY(-2.5px);
+}
+
+.q-footer .nav-btn-left {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.q-footer .nav-btn-left:hover { 
+    background: linear-gradient(270deg, rgba(0,0,0,0), #1D1D1F);
+    color: rgb(113, 133, 123);
+}
+
+.q-footer .nav-btn-right {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.q-footer .nav-btn-right:hover {
+    background: linear-gradient(90deg, rgba(0,0,0,0), #1D1D1F);
+    color: rgb(113, 133, 123);
+}

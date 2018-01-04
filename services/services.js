@@ -4,15 +4,17 @@ angular.module('App').service('srvc', function($http){
     var difficulty = null;
     var score = 0;
     var count = 0;
+    var finsihedQuestions = [];
 
     this.setQuestions = function(cat, diff){
         category = cat;
         difficulty = diff;
     }
 
-    this.setScore = function(pts, cc){
+    this.setScore = function(pts, cc, qs){
         score = pts;
         count = cc;
+        finsihedQuestions = qs;
     }
 
     this.getQuestions = function(){
@@ -43,6 +45,12 @@ angular.module('App').service('srvc', function($http){
             score: score,
             count: count 
         }
+    }
+
+    this.getFinishedQuestions = function(){
+        // return finsihedQuestions;
+        // so I don't have to play the game every 5 seconds
+        return [{"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What was the name of the WWF professional wrestling tag team made up of the wrestlers Ax and Smash?","correct_answer":"Demolition","incorrect_answers":["Demolition","The Dream Team","The Bushwhackers","The British Bulldogs"],"correctIndex":0,"userIndex":0},{"category":"General Knowledge","type":"boolean","difficulty":"easy","question":"Video streaming website YouTube was purchased in it's entirety by Facebook for US$1.65 billion in stock.","correct_answer":"False","incorrect_answers":["True","False"],"correctIndex":1,"userIndex":1},{"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What is \"dabbing\"?","correct_answer":"A dance","incorrect_answers":["A dance","A medical procedure","A sport","A language"],"correctIndex":0,"userIndex":1},{"category":"General Knowledge","type":"boolean","difficulty":"easy","question":"Nutella is produced by the German company Ferrero.","correct_answer":"False","incorrect_answers":["True","False"],"correctIndex":1,"userIndex":1},{"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What was the nickname given to the Hughes H-4 Hercules, a heavy transport flying boat which achieved flight in 1947?","correct_answer":"Spruce Goose","incorrect_answers":["Spruce Goose","Noah's Ark","Fat Man","Trojan Horse"],"correctIndex":0,"userIndex":2},{"category":"General Knowledge","type":"boolean","difficulty":"easy","question":"In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.","correct_answer":"True","incorrect_answers":["False","True"],"correctIndex":1,"userIndex":1},{"category":"General Knowledge","type":"boolean","difficulty":"easy","question":"Adolf Hitler was born in Australia. ","correct_answer":"False","incorrect_answers":["False","True"],"correctIndex":0,"userIndex":0},{"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"Which of the following card games revolves around numbers and basic math?","correct_answer":"Uno","incorrect_answers":["Uno","Go Fish","Twister","Munchkin"],"correctIndex":0,"userIndex":0},{"category":"General Knowledge","type":"boolean","difficulty":"easy","question":"Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.","correct_answer":"False","incorrect_answers":["True","False"],"correctIndex":1,"userIndex":1},{"category":"General Knowledge","type":"boolean","difficulty":"easy","question":"Scotland voted to become an independent country during the referendum from September 2014.","correct_answer":"False","incorrect_answers":["True","False"],"correctIndex":1,"userIndex":0}]
     }
     
 })

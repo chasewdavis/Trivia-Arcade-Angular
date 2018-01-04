@@ -22,8 +22,9 @@ button {
     transition: background-color .5s;
 }
 
+/* way too general screwing a lot of things up */
 .home-container button:hover{
-    background-color: #1D1D1F;
+    /* background-color: #1D1D1F; */
 }
 
 .contain-center{
