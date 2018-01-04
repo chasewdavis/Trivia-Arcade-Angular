@@ -1,17 +1,32 @@
 <div class="home-container">
     <div class="contain-center questions">
-        <header>
 
-        </header>
+        <div class="q-header">
+            <div>{{qs[currentIndex].category}} - {{qs[currentIndex].difficulty}}</div>
+            <div></div>
+            <div>+100 pts</div>
+        </div>
 
-        {{ qs[currentIndex] }}
+        <!-- <div class="q-header">
+            <div>Correctly Answered: 100</div>
+            <div>Time Bonus: 50</div>
+            <div>Difficulty Bonus: 50</div>
+            <div>Points Earned: 200</div>
+        </div> -->
+
+        <div class="question">
+            <h5>{{qs[currentIndex].question}}</h5>
+            <div class="answer-container">
+            <button id="no-click-btn" ng-class="qs[currentIndex].correctIndex === $index ? 'correct-highlight' : qs[currentIndex].userIndex === $index ? 'incorrect-highlight' : 'nothin' " disabled="true" ng-repeat="x in qs[currentIndex].incorrect_answers">{{x}}</button>
+            </div>
+        </div>
 
         <div class="q-footer">
 
             <button ng-click="changeIndex('down')" class="nav-btn nav-btn-left">
                 <div class="gradient"></div>
                 <div class="icon">
-                    <i class="fa fa-angle-left fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
                 </div>
             </button>
 
@@ -23,10 +38,16 @@
             </button>
 
             <button ng-click="changeIndex('up')" class="nav-btn nav-btn-right">
-                <i class="fa fa-angle-right fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
                 <div></div>
             </button>
 
         </div>
+
+        <div class="app-nav-container">
+            <a ui-sref='results'>Save Score</a>
+            <a ui-sref='home'>Try Again</a>
+        </div>
+
     </div>
 </div>

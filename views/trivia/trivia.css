@@ -19,20 +19,20 @@
     padding-right: 30px;
 }
 
-.trivia .question {
+.question {
     padding: 30px;
     font-size: 22px;
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.trivia .answer-container {
+.answer-container {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.trivia .answer-container button {
+.answer-container button {
     position: relative;
     overflow: hidden;
     margin-top: 30px;
@@ -48,7 +48,7 @@
     transition: border .42s, background-color .42s;
 }
 
-.trivia .answer-container button:hover {
+.answer-container button:hover {
     border: 4px solid rgb(113, 133, 123);
     border-right: 4px solid rgb(175, 240, 210);
     border-top: 4px solid rgb(175, 240, 210);
