@@ -10,6 +10,8 @@ angular.module('App').controller('selectCtrl', function($scope, srvc ){
         {'cat':'History','sel':false,'id': 23}
     ];
 
+    srvc.getScores().then( scores =>  $scope.highscores = scores );
+
     $scope.highscores = [
         'Bob Ross - 5312',
         'Greg Grimes - 2343',

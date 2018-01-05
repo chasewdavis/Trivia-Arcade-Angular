@@ -75,5 +75,9 @@ angular.module('App').service('srvc', function($http){
         }
 
     }
+
+    this.getScores = function(){
+        return $http.get(`/api/getScores`).then(res => res.data);
+    }
     
 })

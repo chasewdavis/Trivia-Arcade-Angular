@@ -20,5 +20,12 @@ app.post('/api/postScore', (req,res) => {
     res.sendStatus(200);
 })
 
+app.get('/api/getScores', (req,res) => {
+    const db = req.app.get('db')
+
+    db.get_scores()
+    .then(scores => res.status(200).send(scores));
+})
+
 const PORT = 3030;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
