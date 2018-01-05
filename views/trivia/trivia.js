@@ -53,6 +53,7 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
 
         if($scope.trivia[$scope.index].correct_answer === $scope.trivia[$scope.index].incorrect_answers[i]){
             $scope.countCorrect++;
+
             $scope.trivia[$scope.index].points = 100;
             $scope.score += 100;
 
@@ -66,6 +67,7 @@ angular.module('App').controller('triviaCtrl', function($scope, $state, $timeout
 
             let timeBonus = $scope.time_remaining * 5
             $scope.trivia[$scope.index].points += timeBonus;
+            $scope.score += timeBonus;
 
             $scope.correct = true;
         }else{

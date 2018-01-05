@@ -9,8 +9,8 @@ angular.module('App').controller('results', ['$scope','srvc', 'catSrvc', functio
 
     $scope.results.category = catSrvc.getCategory($scope.results.category);
 
-    $scope.save = function(){
-        console.log('saving')
-    }
+    $scope.username = '';
+
+    $scope.save = srvc.saveScore;
 
 }])

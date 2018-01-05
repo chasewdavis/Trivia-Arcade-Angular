@@ -10,7 +10,7 @@
             <div>Score: {{results.score}}</div>
             <div class="enter-name">
                 <p>Enter Name:</p> 
-                <input/>
+                <input ng-model="username"/>
             </div>
             <div class="outoften">
                 <div>{{ results.count === 10 ? 10 : '0' + results.count.toString() }}</div>
@@ -20,8 +20,8 @@
         </div>
 
         <footer>
-            <a ng-click="save()" ui-sref="questions">View Questions</a>
-            <a ui-sref="home">Save &amp; Continue</a>
+            <a ui-sref="questions">View Questions</a>
+            <a ng-click="save(username,results.category,results.score)" ui-sref="home">Save &amp; Continue</a>
         </footer>
 
     </div>
