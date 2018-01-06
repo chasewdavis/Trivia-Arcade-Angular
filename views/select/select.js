@@ -1,4 +1,4 @@
-angular.module('App').controller('selectCtrl', function($scope, srvc ){
+angular.module('App').controller('selectCtrl', function($scope, srvc, catSrvc ){
 
     $scope.categories = [
         {'cat':'Sports','sel':false, 'id': 21},
@@ -12,12 +12,9 @@ angular.module('App').controller('selectCtrl', function($scope, srvc ){
 
     srvc.getScores().then( scores =>  $scope.highscores = scores );
 
-    $scope.highscores = [
-        'Bob Ross - 5312',
-        'Greg Grimes - 2343',
-        'Ricky Bobby - 2341',
-        'Michael H. - 2203'
-    ];
+    $scope.highscores = [];
+
+    $scope.highscoresByCategory = [];
 
     $scope.category = null;
     $scope.difficulty = null;
@@ -28,6 +25,11 @@ angular.module('App').controller('selectCtrl', function($scope, srvc ){
         })
         $scope.categories[index].sel = true;
         $scope.category = $scope.categories[index].id
+        $scope.highscoresByCategory = $scope.highscores.filter(e => {
+            return e.category === catSrvc.getCategory($scope.category);
+        }).sort( (a,b) => {
+            return b.score - a.score;
+        })
     }
 
     $scope.selectDiff = function(difficulty){

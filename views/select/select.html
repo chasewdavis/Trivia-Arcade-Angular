@@ -22,7 +22,7 @@
             <button ng-click="selectDiff('any')" ng-class="difficulty === 'any' ? 'highlight' : 'no-highlight' ">Any</button>
         </div>
         <div class="scroll-box high-scores">
-            <div ng-repeat="x in highscores">{{$index + 1}}. {{x}}</div>
+            <div ng-repeat="x in highscoresByCategory">{{$index + 1}}. {{x.username}} {{x.score}}</div>
         </div>
 
         <div class="shaddow shaddow-top"></div>

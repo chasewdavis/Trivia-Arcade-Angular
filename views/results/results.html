@@ -10,7 +10,7 @@
             <div>Score: {{results.score}}</div>
             <div class="enter-name">
                 <p>Enter Name:</p> 
-                <input ng-model="username"/>
+                <input ng-model="username" maxlength="11"/>
             </div>
             <div class="outoften">
                 <div>{{ results.count === 10 ? 10 : '0' + results.count.toString() }}</div>
