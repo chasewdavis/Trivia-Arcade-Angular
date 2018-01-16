@@ -27,5 +27,5 @@ app.get('/api/getScores', (req,res) => {
     .then(scores => res.status(200).send(scores));
 })
 
-const PORT = 3030;
+const PORT = 8088;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
